@@ -64,6 +64,9 @@ def main():
 	if FLAGS.mode == "train":
 		model = mlp_model.MLP(FLAGS, hyperparameters)
 		model.train()
+	elif FLAGS.mode == "predict":
+		# the detail can be seen in  predict.py
+		pass
 
 def get_model():
 	model = mlp_model.MLP(FLAGS, hyperparameters)
