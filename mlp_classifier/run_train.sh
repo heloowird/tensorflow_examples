@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # training with GPU
-CUDA_VISIBLE_DEVICES=1 python classifier_main.py --mode train
+CUDA_VISIBLE_DEVICES=1 python classifier.py --mode train
 
 # training with CPU
-#python classifier_main.py --mode train
+#python classifier.py --mode train

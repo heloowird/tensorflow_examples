@@ -8,7 +8,7 @@ import os
 
 import numpy as np
 
-from classifier_main import *
+from classifier import *
 
 FLAGS = get_parameters()
 model_path = FLAGS.model_path
@@ -54,5 +54,5 @@ def predict(model, input_file, output_file):
 			f.write("%s\t%f\n" % (key, label))
 
 if __name__ == "__main__":
-	model = init_model(model_path)
-	predict(model, FLAGS.predict_input_path, FLAGS.predict_output_path)
+	mlp_model = init_model(model_path)
+	predict(mlp_model, FLAGS.predict_input_path, FLAGS.predict_output_path)

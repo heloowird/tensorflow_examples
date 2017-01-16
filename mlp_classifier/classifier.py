@@ -8,7 +8,7 @@ import sys
 
 import tensorflow as tf
 
-import mlp_model
+import model
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS
@@ -62,15 +62,15 @@ print("summary_dir: %s" % FLAGS.summary_dir)
 	
 def main():
 	if FLAGS.mode == "train":
-		model = mlp_model.MLP(FLAGS, hyperparameters)
-		model.train()
+		mlp_model = model.MLP(FLAGS, hyperparameters)
+		mlp_model.train()
 	elif FLAGS.mode == "predict":
-		# the detail should be implemented in predict.py
+		# the detail can be implemented in predict.py
 		pass
 
 def get_model():
-	model = mlp_model.MLP(FLAGS, hyperparameters)
-	return model
+	mlp_model = model.MLP(FLAGS, hyperparameters)
+	return mlp_model
 
 def get_parameters():
 	return FLAGS
