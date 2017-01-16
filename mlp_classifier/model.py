@@ -57,7 +57,13 @@ class MLP():
 		labels = tf.placeholder(tf.float32, [None, self.label_nums])
 		num_of_epoch = tf.placeholder(tf.float32)
 
-		lr = self.FLAGS.learning_rate * (self.FLAGS.decay_rate ** num_of_epoch)
+		if self.FLAGS.lr_policy == "fixed":
+			lr = self.FLAGS.learning_rate
+		elif self.FLAGS.lr_policy == "step":
+			lr = self.FLAGS.learning_rate * (self.FLAGS.decay_rate ** num_of_epoch)
+		else:
+			print("error learning rate policy, using fixed policy")
+			lr = self.FLAGS.learning_rate
 
 		train_op, loss = self.build_train_graph(features, labels, lr) 
 		accuracy = self.get_accuracy(features, labels)
