@@ -44,7 +44,7 @@ class MLP():
 		return train_op, loss
 
 	def predict_label(self, features):
-		return self.activation(self.forward(features))
+		return tf.sigmoid(self.forward(features))
 
 	def get_accuracy(self, features, labels):
 		y_hat = self.predict_label(features)
