@@ -10,4 +10,4 @@
 
 #### text_classfication
 
-* text classifiers that include lstm, cnn or mixed model
+* text classifiers that include lstm, cnn or mixed model (tf1.5)
